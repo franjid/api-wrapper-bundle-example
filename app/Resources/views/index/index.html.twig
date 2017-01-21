@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>xkcd last comic strip</h1>
+<img src="{{ comic.img }}" title="{{ comic.alt }}">
+
+<h2>Generated from this response</h2>
+<code>{{ comic | json_encode(constant('JSON_PRETTY_PRINT')) }}</code>
+{% endblock %}

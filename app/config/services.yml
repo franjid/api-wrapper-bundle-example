@@ -1,0 +1,11 @@
+services:
+    ApiClientXkcd:
+        class: ApiClientXkcd
+        factory: [@ApiWrapperBundle.Component.Api.ApiClientFactory, createApiClient]
+        arguments:
+            - %apiXkcdBaseURI%
+
+    Service.Api.ApiXkcdServiceInterface:
+        class: AppBundle\Service\Api\ApiXkcdService
+        arguments:
+            - @ApiClientXkcd
